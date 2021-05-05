@@ -1,0 +1,40 @@
+#Guess the Number
+
+import random
+
+def hello():
+    print('Hello')
+    helloreply = str.lower(input())
+    while helloreply != "hello":
+            print ("I said 'hello'.  It would be polite if you said it back.")
+            helloreply = input()
+    print('What is your name?')
+
+hello()
+
+userName = input()
+
+print("Hello... " + userName + ".  If that really is your name.")
+
+secretNum = random.randint(1,10)
+
+print("I'm thinking of a number between 1 and 10. Can you guess what it is in just three guesses?")
+
+
+for tries in range (1, 4):
+    try:
+        print ('Take a guess.')
+        guess = int(input())
+        if guess > secretNum:
+            print ('Too high!')
+        elif guess < secretNum:
+            print ('Too low!')
+        else:
+            break
+    except:
+        print('Please enter a number between 1 and 10.')
+
+if guess == secretNum:
+    print('You guessed correctly in ' + str(tries) + ' tries.')
+else:
+    print('Too many tries. Better luck next time. The number I was thinking of was ' + str(secretNum) + '.')
