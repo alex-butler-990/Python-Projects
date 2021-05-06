@@ -1,0 +1,33 @@
+import random
+
+myList = list()
+
+##Functions
+
+def createList(x):
+    print('>Random list:')
+    #Change the upper end of this range to increase/decrease list length
+    for i in range(1,100):
+        #Change the values within randint() to alter the min/max values of each number in the list
+        i = random.randint(0,9)
+        x.append(i)
+    print(x)
+    sort(x)
+
+def sort(y):
+    print('>Sorted list:')
+    p = 1
+    for p in range((len(y))*(len(y))):
+        for n in range(len(y)-1):
+            if y[n] > y[n+1]:
+                y[n], y[n+1] = y[n+1], y[n]
+        p += 1
+    print(y)
+
+
+##Execute
+
+createList(myList)
+
+#createList() both creates and sorts a list
+#If you have a list already and don't need to create one, simply use sort() on its own
